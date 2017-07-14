@@ -1,3 +1,6 @@
+#include "linklist.h"
+#include <stdio.h>
+#include <stdlib.h>
 tDataNode* FindCmd(tDataNode * head, char * cmd)
 {
 	if (head == NULL || cmd == NULL)
@@ -5,9 +8,9 @@ tDataNode* FindCmd(tDataNode * head, char * cmd)
 		return NULL;
 	}
 	tDataNode *p = head;
-	while(P != NULL)
+	while(p != NULL)
 	{
-		if (strcmp(p->cmd, cmd))
+		if (strcmp(p->cmd, cmd) == 0)
 		{
 			return p;
 		}
@@ -27,3 +30,4 @@ int showAllCmd(tDataNode * head)
 	}   
 	return 0;
 }
+

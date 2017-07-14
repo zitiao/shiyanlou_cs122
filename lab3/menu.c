@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <linklist.h>
+#include "linklist.h"
 
 #define CMD_MAX_LEN 128
 #define DESC_LEN 1024
@@ -28,7 +28,7 @@ int main()
 		printf("Input a cmd number >");
 		scanf("%s", cmd);
 		tDataNode *p = FindCmd(head, cmd);
-		if (p != NULL)
+		if (p == NULL)
 		{
 			printf("This is a wrong cmd\n");
 			continue;
@@ -45,7 +45,7 @@ int main()
 
 int Help()
 { 
-	showAllCmd();
+	showAllCmd(head);
 	return 0;
 }
 
